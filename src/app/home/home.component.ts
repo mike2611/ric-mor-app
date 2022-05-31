@@ -10,7 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent {
   character$: Observable<Character[]> = this.homeService.character$;
+  page: number = 1;
 
   constructor(private homeService: HomeService) { }
+
+  nextPage(): void {
+    this.homeService.nextPage();
+  }
+
+  previousPage(): void {
+    this.homeService.previousPage();
+  }
 
 }
