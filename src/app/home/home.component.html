@@ -1,1 +1,39 @@
-<p>home works!</p>
+<mat-grid-list cols="3" rowHeight="23rem" gutterSize="2rem">
+  <mat-grid-tile class="example-card" *ngFor="let character of character$ | async">
+    <mat-grid-tile-header class="header-container">
+      <div>
+        <h1>{{character.name}}</h1>
+      </div>
+    </mat-grid-tile-header>
+    <img mat-card-image src={{character.image}} alt="Photo of character">
+    <mat-grid-tile-footer class="btn-container">
+      <button mat-raised-button color="primary">Details</button>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <section *ngFor="let character of character$ | async">
+  <mat-card class="example-card">
+    <mat-card-header class="header-container">
+      <div class="title-div">
+        <div mat-card-avatar class="example-header-image" style='background-image: url({{character.image}});'></div>
+        <h1 class="title-text" color="primary">{{character.name}}</h1>
+      </div>
+      <div class="subtitle-div">
+        <p><span class="subtitle-text">Gender: </span>{{character.gender}}</p>
+        <p><span class="subtitle-text">Created: </span>{{character.created | date}}</p>
+      </div>
+    </mat-card-header>
+    <img mat-card-image src={{character.image}} alt="Photo of character">
+    <mat-card-actions class="btn-container">
+      <button mat-raised-button color="primary">Details</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list> -->

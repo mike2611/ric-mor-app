@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { map, filter, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { Character } from '../character';
+import { ResultCharacters } from '../result-characters';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +17,10 @@ export class HomeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCharacters(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/character`).
+  getCharacters(): Observable<Character[]> {
+    return this.httpClient.get<ResultCharacters>(`${this.baseUrl}/character`).
       pipe(
-        map((result: any) => (result.results))
+        map((data) => data.results)
       );
   }
 }

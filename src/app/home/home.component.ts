@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HomeService } from './home.service';
+import { Character } from '../character';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  character$: Observable<Character[]> = this.homeService.character$;
 
   constructor(private homeService: HomeService) { }
-
-  ngOnInit(): void {
-    this.homeService.getCharacters().
-      subscribe((data) => console.log(data));
-  }
 
 }
