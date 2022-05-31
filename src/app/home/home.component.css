@@ -1,6 +1,15 @@
-.list-container {}
+.general-container {
+  display: flex;
+  justify-content: center;
+}
 
-.example-card {
+.list-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "card-character card-character card-character";
+}
+
+.card-character {
   max-width: 350px;
   border-radius: 10px;
   border: 1px solid #eaeaea;
@@ -16,22 +25,35 @@ h1 {
 }
 
 img {
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-  background-color: transparent !important;
-}
-
-button {
-  width: 95%;
-  height: 45px;
+.btn {
+  width: 100%;
+  height: 35px;
   border-radius: 0 0 10px 10px;
+}
+
+.btn span {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .alert-characters {
   text-align: center;
   color: #b53f59;
+}
+
+@media (max-width: 576px) {
+  .list-container {
+    grid-template-areas: "card-character";
+  }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+  .list-container {
+    grid-template-areas: "card-character card-character";
+  }
 }

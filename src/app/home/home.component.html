@@ -1,4 +1,27 @@
-<section class="list-container" infinite-scroll (scrolled)="moreResults()">
+<section class="general-container">
+  <div class="list-container" infinite-scroll (scrolled)="moreResults()">
+    <mat-card class="card-character" *ngFor="let character of characters ">
+      <mat-card-title class="header-container">
+        <h1>{{character.name | slice: 0:20}}</h1>
+      </mat-card-title>
+      <mat-card-content>
+        <a>
+          <img src={{character.image}} alt="Photo of character">
+        </a>
+        <a mat-raised-button color="primary" class="btn">
+          <span>Click for details</span>
+        </a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+
+<div class="alert-characters" *ngIf="!moreResultsAvailable">
+  <h2>These are all the existing characters to this day.</h2>
+</div>
+
+<!-- <section class="list-container" infinite-scroll (scrolled)="moreResults()">
   <mat-grid-list cols="3" rowHeight="23rem" gutterSize="2rem">
     <mat-grid-tile class="example-card" *ngFor="let character of characters ">
       <mat-grid-tile-header class="header-container">
@@ -17,4 +40,4 @@
 
 <div class="alert-characters" *ngIf="!moreResultsAvailable">
   <h2>These are all the existing characters to this day.</h2>
-</div>
+</div> -->
