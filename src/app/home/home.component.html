@@ -1,16 +1,20 @@
-<button mat-button (click)="nextPage()">NextPage</button>
-<button mat-button (click)="previousPage()">PreviousPage</button>
+<section class="list-container" infinite-scroll (scrolled)="moreResults()">
+  <mat-grid-list cols="3" rowHeight="23rem" gutterSize="2rem">
+    <mat-grid-tile class="example-card" *ngFor="let character of characters ">
+      <mat-grid-tile-header class="header-container">
+        <div>
+          <h1>{{character.name | slice: 0:20}}</h1>
+        </div>
+      </mat-grid-tile-header>
+      <img mat-card-image src={{character.image}} alt="Photo of character">
+      <mat-grid-tile-footer class="btn-container">
+        <button mat-raised-button color="primary">Details</button>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
 
-<mat-grid-list cols="3" rowHeight="23rem" gutterSize="2rem">
-  <mat-grid-tile class="example-card" *ngFor="let character of character$ | async">
-    <mat-grid-tile-header class="header-container">
-      <div>
-        <h1>{{character.name}}</h1>
-      </div>
-    </mat-grid-tile-header>
-    <img mat-card-image src={{character.image}} alt="Photo of character">
-    <mat-grid-tile-footer class="btn-container">
-      <button mat-raised-button color="primary">Details</button>
-    </mat-grid-tile-footer>
-  </mat-grid-tile>
-</mat-grid-list>
+
+<div class="alert-characters" *ngIf="!moreResultsAvailable">
+  <h2>These are all the existing characters to this day.</h2>
+</div>

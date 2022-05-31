@@ -1,3 +1,5 @@
+.list-container {}
+
 .example-card {
   max-width: 350px;
   border-radius: 10px;
@@ -27,4 +29,9 @@ button {
   width: 95%;
   height: 45px;
   border-radius: 0 0 10px 10px;
+}
+
+.alert-characters {
+  text-align: center;
+  color: #b53f59;
 }
