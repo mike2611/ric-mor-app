@@ -19,14 +19,6 @@ export class HomeComponent implements OnInit {
     private homeService: HomeService,
   ) { }
 
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll(): void {
-  //   const yOffSet = window.pageYOffset;
-  //   if(yOffSet > 0) {
-  //     this.document.body.classList.add('sticky-header');
-  //   }
-  // }
-
   moreResults(): void {
     if (this.moreResultsAvailable) {
       this.page += 1;
@@ -38,11 +30,6 @@ export class HomeComponent implements OnInit {
       );
     }
   }
-
-  // onScrollTop(): void {
-  //   this.document.body.scrollTop = 0;
-  //   this.document.documentElement.scrollTop = 0;
-  // }
 
   ngOnInit(): void {
     this.moreResults();

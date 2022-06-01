@@ -1,0 +1,12 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.and-title {
+  color: rgba(236, 203, 16, 0.753);
+  font-size: 1.4em;
+}
+
+.icons {
+  color: rgba(236, 203, 16, 0.753);
+}

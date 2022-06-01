@@ -26,6 +26,7 @@ img {
 }
 
 .btn span {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  color: rgba(236, 203, 16, 0.753);
 }
