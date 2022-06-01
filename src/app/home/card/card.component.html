@@ -1,0 +1,13 @@
+<mat-card class="card-character" *ngIf="character">
+  <mat-card-title class="header-container">
+    <h1>{{character.name | slice: 0:20}}</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <a>
+      <img src={{character.image}} alt="Photo of character">
+    </a>
+    <a mat-raised-button color="primary" class="btn">
+      <span>Click for details</span>
+    </a>
+  </mat-card-content>
+</mat-card>
