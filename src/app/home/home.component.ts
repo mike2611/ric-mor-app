@@ -1,7 +1,7 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from './home.service';
+import { SearchService } from '../header/search.service';
 import { Character } from '../character';
 
 @Component({
@@ -13,13 +13,17 @@ export class HomeComponent implements OnInit {
   characters: Character[] = [];
   page: number = 0;
   moreResultsAvailable = true;
+  searchText$ = this.searchService.searchText$;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
     private homeService: HomeService,
+    private searchService: SearchService,
   ) { }
 
   moreResults(): void {
+    this.searchText$.subscribe(
+      (text) => console.log('Desde la subscripcion: ' + text),
+    );
     if (this.moreResultsAvailable) {
       this.page += 1;
       this.homeService.getCharacters(this.page).subscribe(
@@ -35,3 +39,21 @@ export class HomeComponent implements OnInit {
     this.moreResults();
   }
 }
+
+
+// @ViewChild('inputSearch', { static: false })
+// searchInput!: ElementRef;
+// searchInput$!: Observable<any>;
+
+// constructor() { }
+
+// ngAfterViewInit(): void {
+//   this.searchInput$ = fromEvent(this.searchInput.nativeElement, 'keyup').
+//     pipe(
+//       auditTime(400),
+//       //We can also use throttleTime(400, asyncScheduler, { leading: true, trailing: true }),
+//     )
+//   this.searchInput$.subscribe(() => {
+//     console.log(this.searchInput.nativeElement.value);
+//   });
+// }
