@@ -15,10 +15,14 @@
   font-size: 1.4em;
 }
 
-.icons {
-  color: rgba(236, 203, 16, 0.753);
+.links a {
+  margin-right: 10px;
+  color: white;
 }
 
+.links a mat-icon {
+  color: rgba(236, 203, 16, 0.753);
+}
 
 
 @media (max-width: 576px) {
