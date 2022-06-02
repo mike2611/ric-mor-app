@@ -2,6 +2,14 @@
   flex: 5;
 }
 
+.small-title {
+  display: none;
+}
+
+.big-title {
+  display: inline;
+}
+
 .and-title {
   color: rgba(236, 203, 16, 0.753);
   font-size: 1.4em;
@@ -9,4 +17,16 @@
 
 .icons {
   color: rgba(236, 203, 16, 0.753);
+}
+
+
+
+@media (max-width: 576px) {
+  .big-title {
+    display: none;
+  }
+
+  .small-title {
+    display: inline;
+  }
 }
