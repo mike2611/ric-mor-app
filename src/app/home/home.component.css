@@ -1,3 +1,8 @@
+.input-container {
+  width: 100%;
+  text-align: center;
+}
+
 .general-container {
   display: flex;
   justify-content: center;
