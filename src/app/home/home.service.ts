@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { map, Observable, take } from 'rxjs';
 import { ResultCharacters } from '../result-characters';
 import { RequestInfo } from '../request-info';
+import { Character } from '../character';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class HomeService {
         take(1),
         map((data) => ({ characters: data.results, nextAvailable: data.info.next !== null ? true : false })),
       );
+  }
+
+  getCharacter(id: number): Observable<Character> {
+    return this.httpClient.get<Character>(`${this.baseUrl}/character/${id}`);
   }
 }
