@@ -1,23 +1,32 @@
-<mat-card class="character-card" *ngIf="character$ | async as character">
-  <mat-card-header>
-    <div mat-card-avatar class="character-header-image" style="background-image: url({{character.image}});"></div>
-    <mat-card-title>{{character.name}}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src={{character.image}} alt="{{character.name}}">
-  <mat-card-content>
-    <ul>
-      <li>Gender: {{character.gender}}</li>
-      <li>Species: {{character.species}}</li>
-      <li>Origin: {{character.origin.name}}</li>
-      <li>Status: {{character.status}}</li>
-    </ul>
-    <p>
-      {{character.name}} first appeared in the episode number {{character.episode[0] | filterLetters}}.
-      The current location of {{character.name}} is {{character.location.name}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Go Back</button>
-  </mat-card-actions>
-</mat-card>
+<div class="card-container">
+  <mat-card class="character-card" *ngIf="character$ | async as character">
+    <mat-card-header>
+      <div mat-card-avatar class="character-header-image" style="background-image: url({{character.image}});"></div>
+      <mat-card-title class="title-text">{{character.name}}</mat-card-title>
+      <mat-card-subtitle [ngClass]="character.status === 'Alive' ? 'alive' : 'dead'">
+        <mat-icon>circle</mat-icon> <span class="subtitle-text">{{character.status}}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{character.image}} alt="{{character.name}}">
+    <mat-card-content>
+      <ul>
+        <li>
+          <div><span>Gender </span>{{character.gender}}</div>
+        </li>
+        <li>
+          <div><span>Species</span> {{character.species}}</div>
+        </li>
+        <li>
+          <div><span>Origin </span>{{character.origin.name}}</div>
+        </li>
+      </ul>
+      <p class="description-text">
+        {{character.name}} first appeared in the episode number {{character.episode[0] | filterLetters}}.
+        Last known location of {{character.name}} is {{character.location.name}}.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/home">Go Back</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
