@@ -14,8 +14,11 @@ export class HomeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCharacters(page: number): Observable<RequestInfo> {
-    return this.httpClient.get<ResultCharacters>(`${this.baseUrl}/character/?page=${page}`).
+  getCharacters(page: number, name?: string): Observable<RequestInfo> {
+    console.log(name);
+    return this.httpClient.get<ResultCharacters>(
+      name ? `${this.baseUrl}/character/?name=${name}&page=${page}` : `${this.baseUrl}/character/?page=${page}`
+    ).
       pipe(
         take(1),
         map((data) => ({ characters: data.results, nextAvailable: data.info.next !== null ? true : false })),

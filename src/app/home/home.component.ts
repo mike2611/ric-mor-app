@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   characters: Character[] = [];
   page: number = 0;
   moreResultsAvailable = true;
+  characterName = '';
   searchText$ = this.searchService.searchText$;
 
   constructor(
@@ -21,13 +22,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   moreResults(): void {
-    this.searchText$.subscribe(
-      (text) => console.log('Desde la subscripcion: ' + text),
-    );
     if (this.moreResultsAvailable) {
       this.page += 1;
-      this.homeService.getCharacters(this.page).subscribe(
+      this.homeService.getCharacters(this.page, this.characterName).subscribe(
         (data) => {
+          console.log(data.nextAvailable)
           this.moreResultsAvailable = data.nextAvailable;
           this.characters = this.characters.concat(data.characters)
         },
@@ -36,7 +35,20 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.moreResults();
+    this.searchText$.subscribe(
+      (characterName) => {
+
+        this.characters = [];
+        this.page = 0;
+
+        if (this.characterName !== characterName) {
+          this.moreResultsAvailable = true;
+          this.characterName = characterName;
+        }
+
+        this.moreResults();
+      }
+    );
   }
 }
 
