@@ -15,7 +15,6 @@ export class HomeService {
   constructor(private httpClient: HttpClient) { }
 
   getCharacters(page: number, name?: string): Observable<RequestInfo> {
-    console.log(name);
     return this.httpClient.get<ResultCharacters>(
       name ? `${this.baseUrl}/character/?name=${name}&page=${page}` : `${this.baseUrl}/character/?page=${page}`
     ).

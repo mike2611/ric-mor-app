@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
       this.page += 1;
       this.homeService.getCharacters(this.page, this.characterName).subscribe(
         (data) => {
-          console.log(data.nextAvailable)
           this.moreResultsAvailable = data.nextAvailable;
           this.characters = this.characters.concat(data.characters)
         },
