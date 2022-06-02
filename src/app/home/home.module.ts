@@ -7,6 +7,8 @@ import { DetailsCharacterComponent } from './details-character/details-character
 import { HomeRoutingModule } from './home-routing.module';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FilterLettersPipe } from './details-character/filter-letters.pipe';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -15,12 +17,14 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   declarations: [
     HomeComponent,
     DetailsCharacterComponent,
+    FilterLettersPipe,
   ],
   imports: [
     CommonModule,
     CardModule,
     InfiniteScrollModule,
     HomeRoutingModule,
+    MaterialModule,
   ],
   exports: [
     CardModule,

@@ -13,6 +13,10 @@ h1 {
   color: #3f51b5;
 }
 
+a {
+  cursor: pointer;
+}
+
 img {
   width: 100%;
   border-radius: 10px 10px 0 0;

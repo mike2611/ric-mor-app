@@ -3,10 +3,10 @@
     <h1>{{character.name | slice: 0:20}}</h1>
   </mat-card-title>
   <mat-card-content>
-    <a>
+    <a (click)="navigateToCharacterDetails(character.id)">
       <img src={{character.image}} alt="Photo of character">
     </a>
-    <a mat-raised-button color="primary" class="btn">
+    <a mat-raised-button color="primary" class="btn" (click)="navigateToCharacterDetails(character.id)">
       <span>Click for details</span>
     </a>
   </mat-card-content>
