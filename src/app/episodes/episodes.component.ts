@@ -10,17 +10,21 @@ import { Episode } from './episode';
 export class EpisodesComponent implements OnInit {
 
   episodes: Episode[] = [];
+  moreResultsAvailable = true;
   page = 0;
 
   constructor(private episodesService: EpisodesService) { }
 
   moreResults(): void {
-    this.page += 1;
-    this.episodesService.getEpisodes(this.page).subscribe(
-      (data) => {
-        this.episodes = this.episodes.concat(data);
-      }
-    );
+    if (this.moreResultsAvailable) {
+      this.page += 1;
+      this.episodesService.getEpisodes(this.page).subscribe(
+        (data) => {
+          this.moreResultsAvailable = data.nextAvailable;
+          this.episodes = this.episodes.concat(data.episodes);
+        }
+      );
+    }
   }
 
   ngOnInit(): void {

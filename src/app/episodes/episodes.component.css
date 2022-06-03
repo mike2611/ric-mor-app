@@ -9,6 +9,12 @@
   grid-template-areas: "card-character card-character card-character";
 }
 
+.alert-episodes {
+  text-align: center;
+  color: #b53f59;
+}
+
+
 
 @media (max-width: 576px) {
   .list-container {
