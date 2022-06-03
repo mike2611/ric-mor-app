@@ -50,21 +50,3 @@ export class HomeComponent implements OnInit {
     );
   }
 }
-
-
-// @ViewChild('inputSearch', { static: false })
-// searchInput!: ElementRef;
-// searchInput$!: Observable<any>;
-
-// constructor() { }
-
-// ngAfterViewInit(): void {
-//   this.searchInput$ = fromEvent(this.searchInput.nativeElement, 'keyup').
-//     pipe(
-//       auditTime(400),
-//       //We can also use throttleTime(400, asyncScheduler, { leading: true, trailing: true }),
-//     )
-//   this.searchInput$.subscribe(() => {
-//     console.log(this.searchInput.nativeElement.value);
-//   });
-// }

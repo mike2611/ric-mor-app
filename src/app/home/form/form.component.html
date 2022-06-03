@@ -3,7 +3,7 @@
     Click here to search by name
   </mat-label>
   <input matInput type="text" [(ngModel)]="value" autocomplete="off" (keyup)="onSearch()">
-  <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>

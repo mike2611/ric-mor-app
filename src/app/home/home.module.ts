@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component';
 import { DetailsCharacterComponent } from './details-character/details-character.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { FormComponent } from '../home/form/form.component';
+import { GoTopModule } from '../go-top/go-top.module';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FilterLettersPipe } from './details-character/filter-letters.pipe';
@@ -27,6 +28,7 @@ import { MaterialModule } from '../material/material.module';
     HomeRoutingModule,
     MaterialModule,
     FormsModule,
+    GoTopModule,
   ],
   exports: [
     CardModule,
