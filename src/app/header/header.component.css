@@ -1,12 +1,12 @@
-.example-spacer {
+.spacer {
   flex: 5;
 }
 
-.small-title {
+.small-screen {
   display: none;
 }
 
-.big-title {
+.big-screen {
   display: inline;
 }
 
@@ -15,24 +15,36 @@
   font-size: 1.4em;
 }
 
-.links a {
+.links-small {
+  margin-right: 10px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+
+.links {
   margin-right: 10px;
   color: white;
   cursor: pointer;
   text-decoration: none;
 }
 
-.links a mat-icon {
+.links mat-icon {
   color: rgba(236, 203, 16, 0.753);
+}
+
+.links-small mat-icon {
+  color: #3f51b5;
 }
 
 
 @media (max-width: 576px) {
-  .big-title {
+  .big-screen {
     display: none;
   }
 
-  .small-title {
+  .small-screen {
     display: inline;
   }
 }

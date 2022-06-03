@@ -3,10 +3,18 @@
     <h1>{{episode.name}}</h1>
   </mat-card-title>
   <mat-card-content>
-    <ul>
-      <li><span>Episode:</span> {{episode.episode}}</li>
-      <li><span>Episode number:</span> {{episode.id}}</li>
-      <li><span>Air date:</span> {{episode.air_date}}</li>
-    </ul>
+    <mat-list>
+      <mat-list-item>
+        <span>Episode:&nbsp;</span> {{episode.episode}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <span>Episode number:&nbsp;</span> {{episode.id}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <span>Air date:&nbsp;</span> {{episode.air_date}}
+      </mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>

@@ -1,18 +1,28 @@
 <p>
   <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span class="big-title">The Rick <span class="and-title">&</span> Morty App</span>
-    <span class="small-title">The R<span class="and-title">&</span>M App</span>
+    <span class="big-screen">The Rick <span class="and-title">&</span> Morty App</span>
+    <span class="small-screen">The R<span class="and-title">&</span>M App</span>
 
-    <span class="example-spacer"></span>
-    <div class="links">
-      <a routerLink="/home">
+    <span class="spacer"></span>
+    <div>
+      <button class="small-screen" mat-icon-button [matMenuTriggerFor]="menuOptions" aria-label="menu button">
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu class="small-screen" #menuOptions="matMenu">
+        <a class="links-small" routerLink="/home">
+          Characters
+          <mat-icon>person</mat-icon>
+        </a>
+        <a class="links-small" routerLink="/episodes">
+          Episodes
+          <mat-icon>play_circle</mat-icon>
+        </a>
+      </mat-menu>
+      <a class="big-screen links" routerLink="/home">
         Characters
         <mat-icon>person</mat-icon>
       </a>
-      <a routerLink="/episodes">
+      <a class="big-screen links" routerLink="/episodes">
         Episodes
         <mat-icon>play_circle</mat-icon>
       </a>
