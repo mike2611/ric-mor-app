@@ -1,0 +1,7 @@
+<section class="general-container">
+  <div class="list-container" infinite-scroll (scrolled)="moreResults()">
+    <ng-container *ngFor="let episode of episodes">
+      <app-card [episode]="episode"></app-card>
+    </ng-container>
+  </div>
+</section>

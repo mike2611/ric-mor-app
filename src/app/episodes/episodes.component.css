@@ -1,0 +1,23 @@
+.general-container {
+  display: flex;
+  justify-content: center;
+}
+
+.list-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "card-character card-character card-character";
+}
+
+
+@media (max-width: 576px) {
+  .list-container {
+    grid-template-areas: "card-character";
+  }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+  .list-container {
+    grid-template-areas: "card-character card-character";
+  }
+}

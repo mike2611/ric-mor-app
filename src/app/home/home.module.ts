@@ -13,9 +13,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FilterLettersPipe } from './details-character/filter-letters.pipe';
 import { MaterialModule } from '../material/material.module';
 
-
-
-
 @NgModule({
   declarations: [
     HomeComponent,

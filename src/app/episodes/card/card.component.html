@@ -1,0 +1,12 @@
+<mat-card class="card-character" *ngIf="episode">
+  <mat-card-title class="header-container">
+    <h1>{{episode.name}}</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <ul>
+      <li><span>Episode:</span> {{episode.episode}}</li>
+      <li><span>Episode number:</span> {{episode.id}}</li>
+      <li><span>Air date:</span> {{episode.air_date}}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

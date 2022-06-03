@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { HomeModule } from './home/home.module';
+import { EpisodesModule } from './episodes/episodes.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HeaderModule,
     HomeModule,
+    EpisodesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

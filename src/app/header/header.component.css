@@ -18,6 +18,8 @@
 .links a {
   margin-right: 10px;
   color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .links a mat-icon {
