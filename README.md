@@ -1,27 +1,31 @@
-# RicMorApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+# Rick and Morty App
 
-## Development server
+> A Project that gets all the characters and episodes from the show.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Desktop 💻
+![image](https://user-images.githubusercontent.com/28109626/172458543-3067563a-96db-4d38-b9fc-c40b6fbb6732.png)
 
-## Code scaffolding
+## Mobile 📱
+![image](https://user-images.githubusercontent.com/28109626/172458844-f4648b06-b901-4c45-a560-8903f8f4ccfc.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Built With
 
-## Build
+- Angular
+- Angular-Material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Authors
 
-## Running unit tests
+👤 **Miguel Puentes**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- GitHub: [@mike](https://github.com/mike2611)
+- Twitter: [@Miguel](https://twitter.com/MiguelP2611)
+- LinkedIn: [Miguel](https://www.linkedin.com/in/miguel-puentes-mata-90a562139)
 
-## Running end-to-end tests
+## 🤝 Contributing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Contributions, issues, and feature requests are welcome!
 
-## Further help
+## Show your support
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Give a ⭐️ if you like this project!
