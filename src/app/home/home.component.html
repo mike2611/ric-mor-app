@@ -3,7 +3,7 @@
 </div>
 
 <section class="general-container">
-  <div class="list-container" infinite-scroll (scrolled)="moreResults()">
+  <div class="list-container" infinite-scroll [alwaysCallback]="true" (scrolled)="moreResults()">
     <ng-container *ngFor="let character of characters">
       <app-card [character]="character"></app-card>
     </ng-container>

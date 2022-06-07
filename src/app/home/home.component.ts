@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { HomeService } from './home.service';
 import { SearchService } from '../header/search.service';
@@ -9,12 +9,13 @@ import { Character } from '../character';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   characters: Character[] = [];
   page: number = 0;
   moreResultsAvailable = true;
   characterName = '';
   searchText$ = this.searchService.searchText$;
+  searchTextSubscription: any;
 
   constructor(
     private homeService: HomeService,
@@ -34,9 +35,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchText$.subscribe(
+    this.searchTextSubscription = this.searchText$.subscribe(
       (characterName) => {
-
         this.characters = [];
         this.page = 0;
 
@@ -48,5 +48,9 @@ export class HomeComponent implements OnInit {
         this.moreResults();
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.searchTextSubscription.unsubscribe();
   }
 }
