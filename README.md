@@ -9,6 +9,9 @@
 ## Mobile 📱
 ![image](https://user-images.githubusercontent.com/28109626/172458844-f4648b06-b901-4c45-a560-8903f8f4ccfc.png)
 
+## Live Page
+https://mike2611.github.io/ric-mor-app/home
+
 ## Built With
 
 - Angular
