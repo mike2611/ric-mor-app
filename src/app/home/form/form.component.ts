@@ -17,6 +17,6 @@ export class FormComponent {
 
   onClear() {
     this.value = '';
-    this.searchService.getSearchText(this.value);
+    this.onSearch();
   }
 }
